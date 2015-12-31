@@ -1,15 +1,7 @@
-angular.module('shortly.links', [])
+angular.module('shortly.links', ['shortly.services'])
 
 .controller('LinksController', function ($scope, Links) {
   angular.extend($scope, Links);
-  //should have a link property on the $scope
-})
-
-.factory('Links', function(){
-  var data = {};
-  return {
-    data: data
-  };
+  // call the getLinks method here
+  $scope.getLinks();
 });
-
-//testing!!!
