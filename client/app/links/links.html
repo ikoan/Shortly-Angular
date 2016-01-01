@@ -1,5 +1,11 @@
 <div id='container'>
-  <div ng-repeat="(key, value) in data.links">
-    <h2>{{value}}<h2>
-  </div>
+  <ul>
+    <li class='link' ng-repeat="link in data.links" ng-click='clickLink(link)'>
+      <img class='image' src='/assets/redirect_icon.png'>
+      <div class='title'>{{link.title}}</div>
+      <div class='original'>{{link.url}}</div>
+      <div>{{link.base_url}}</div>
+      <div class='visits'>{{link.visits}}</div>
+    </li>
+  </ul>
 </div>

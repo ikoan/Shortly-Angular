@@ -1,6 +1,6 @@
 angular.module('shortly.services', [])
 
-.factory('Links', function ($http) {
+.factory('Links', function ($http, $window, $location) {
   var data = {};
   var link = {};
   //getLinks method for the scope
@@ -28,11 +28,21 @@ angular.module('shortly.services', [])
       });
   };
 
+  var clickLink = function(link){
+    //increment visits
+    //url is a string in our object
+    console.log(link);
+    link.visits++;
+    console.log(link);
+    // $window.location.href = link.url;
+  };
+
   return {
     data: data,
     link: link,
     getLinks: getLinks,
-    addLink: addLink
+    addLink: addLink,
+    clickLink: clickLink
   };
 })
 
