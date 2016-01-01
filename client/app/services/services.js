@@ -29,12 +29,12 @@ angular.module('shortly.services', [])
   };
 
   var clickLink = function(link){
-    //increment visits
-    //url is a string in our object
+    $http({
+      method: 'GET',
+      url: '/api/links',
+      data: link
+    });
     console.log(link);
-    link.visits++;
-    console.log(link);
-    // $window.location.href = link.url;
   };
 
   return {
